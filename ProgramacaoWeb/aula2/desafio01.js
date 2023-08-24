@@ -3,11 +3,16 @@ let matrizA = [
     [3, 4],
     [5, 6]
 ];
+console.log("Matriz A:")
 console.table(matrizA);
-for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-        matrizA[i][j] = matrizA[j][i];
-        console.log(matrizA);
+
+let matrizT = [];
+
+for (let i = 0; i < matrizA[0].length; i++) {
+    matrizT[i] = [];
+    for (let j = 0; j < matrizA.length; j++) {
+        matrizT[i][j] = matrizA[j][i];
     }
 }
-console.table(matrizA);
+console.log("Matriz T:")
+console.table(matrizT);
