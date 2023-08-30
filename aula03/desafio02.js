@@ -1,10 +1,9 @@
 function RetornarArray(frase) {
-
-    let temp = frase
-    let palavras = temp.split(" ")
+    console.log(frase)
+    let palavras = frase.split(" ")
     for (let i = 0; i < palavras.length; i++) {
-        if (palavras[i] == 0) {
-            palavras[i] = aleatorio
+        if (palavras[i] != "") {
+            palavras[i] = `${i + 1}ª palavra distinta`
         }
     }
     return palavras
