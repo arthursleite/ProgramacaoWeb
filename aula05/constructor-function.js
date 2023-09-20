@@ -7,10 +7,10 @@
 function Pessoa(paramNome, paramIdade) {
     this.nome = paramNome;
     this.idade = paramIdade;
-    this.calculaAnoNascimento = function() {
+    this.calculaAnoNascimento = function () {
         return new Date().getUTCFullYear() - this.idade;
     };
-    this.printaAtributos = function() {
+    this.printaAtributos = function () {
         return `${this.nome} ${this.idade}`;
     };
 }
