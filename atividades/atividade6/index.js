@@ -6,15 +6,23 @@ const port = 8080;
 app.engine("html", mustacheExpress());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
-    let usuario = {
-        nome: "Jota",
-        telefone: 123
-    };
-    res.render("index.html", (usuario));
+  res.render("index", {});
 });
 
+app.post("/dados", function (req, res) {
+  const dados = {
+    nome: req.body.nome,
+    endereco: req.body.endereco,
+    telefone: req.body.telefone,
+    dataAgendamento: req.body.dataAgendamento
+  };
+  res.render("dados", dados);
+});
+
+
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+  console.log(`Programa rodando na porta ${port}`)
 })
