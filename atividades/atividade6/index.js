@@ -19,6 +19,7 @@ app.post("/dados", function (req, res) {
     telefone: req.body.telefone,
     dataAgendamento: req.body.dataAgendamento
   };
+  // console.log(dados);
   res.render("dados", dados);
 });
 
