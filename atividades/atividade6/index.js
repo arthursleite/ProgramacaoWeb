@@ -19,8 +19,23 @@ app.post("/dados", function (req, res) {
     telefone: req.body.telefone,
     dataAgendamento: req.body.dataAgendamento
   };
+
+  let erro_form = false;
+  if (dados.nome == "") {
+    erro_form = true;
+  }
+  if (dados.endereco == "") {
+    erro_form = true;
+  }
+  if (dados.telefone == "") {
+    erro_form = true;
+  }
+  if (dados.dataAgendamento == "") {
+    erro_form = true;
+  }
+
   // console.log(dados);
-  res.render("dados", dados);
+  res.render("dados", {dados, erro_form});
 });
 
 

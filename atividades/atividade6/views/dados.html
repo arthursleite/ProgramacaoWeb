@@ -10,6 +10,13 @@
 </head>
 
 <body>
+  {{#erro_form}}
+  <div class="alert alert-danger" role="alert">
+    Nenhum campo pode estar vazio!
+  </div>
+  {{/erro_form}}
+
+  {{^erro_form}}
   <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="w-50">
       <h1 class="text-center mb-5">Lista de dados</h1>
@@ -21,6 +28,7 @@
       </ul>
     </div>
   </div>
+  {{/erro_form}}
 </body>
 
 </html>
