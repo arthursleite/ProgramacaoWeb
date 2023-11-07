@@ -5,9 +5,12 @@ function indexCalculadora(req, res) {
 }
 
 function calcular(req, res) {
-    let n1 = req.body.n1;
-    let n2 = req.body.n2;
-    res.render("resultado.html");
+    const numeros = {
+        n1: req.body.n1,
+        n2: req.body.n2
+    };
+    console.log(numeros);
+    res.render("resultado.html", {numeros});
     // res.send(`${n1} + ${n2} = ${calculadora.somar(n1, n2)}`); 
     //no exercicio, retornar o valor renderizando o html
 }
